@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Contact Form</title>
+<link rel="stylesheet" href="contact.css">
+<style>
+
+body {
+
+font-family: Arial, sans-serif;
+
+padding: 20px;
+
+background-color: #f4f4f4;
+
+}
+
+form {
+
+background: #fff;
+
+padding: 20px;
+
+max-width: 400px;
+
+margin: auto;
+
+border-radius: 8px;
+
+box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+}
+
+input, textarea {
+
+width: 100%;
+
+padding: 10px;
+
+margin-top: 10px;
+
+margin-bottom: 20px;
+
+border: 1px solid #ccc;
+
+border-radius: 5px;
+
+}
+
+button {
+
+background-color: #007BFF;
+
+color: white;
+
+padding: 10px;
+
+border: none;
+
+border-radius: 5px;
+
+cursor: pointer;
+
+}
+
+.success {
+
+color: green;
+
+}
+
+</style>
+
+</head>
+
+<body>
+<header>
+       
+        <nav>
+            <a href="LAB 1.html">Home</a>
+            <a href="summative 2.html">About</a>
+            <a href="contact_1.html">Contact</a>
+        </nav>
+    </header>
+
+
+
+<form id="contact-form">
+
+<label>Name:</label>
+
+<input type="text" name="name" required>
+
+
+<label>Email:</label>
+
+<input type="email" name="email" required>
+
+
+<label>Message:</label>
+
+<textarea name="message" rows="5" required></textarea>
+
+
+<button type="submit">Send</button>
+
+<p class="success" id="response"></p>
+
+</form>
+
+
+<script>
+
+const scriptURL = "https://script.google.com/macros/s/AKfycby2nJUQJjK2xBKR2IX15ZYOhY3BGV8VV3kYMroCp2SrcHwuszXbXSpIeZdh_mxifrHK2w/exec";
+    const form = document.getElementById("contact-form");
+    const responseMsg = document.getElementById("response");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      fetch(scriptURL, {
+        method: "POST",
+        body: new URLSearchParams(formData)
+      })
+      .then(res => res.json())
+      .then(data => {
+        responseMsg.textContent = "Message sent successfully!";
+        form.reset();
+      })
+      .catch(error => {
+        responseMsg.textContent = "Error sending message.";
+        console.error("Error!", error.message);
+      });
+    });
+	function validateContactForm() {
+            const form = document.getElementById('contactForm');
+            const fields = form.querySelectorAll('[name="contactField"]');
+            const emailField = document.getElementById('email');
+            let allFilled = true;
+            let emailValid = true;
+
+            document.getElementById("feedback").innerText = "";
+            fields.forEach(field => field.classList.remove("error"));
+
+            // Check if all fields are filled
+            for (let i = 0; i < fields.length; i++) {
+                if (fields[i].value.trim() === "") {
+                    fields[i].classList.add("error");
+                    allFilled = false;
+                }
+            }
+
+            // Validate email format
+            if (emailField.value.trim() !== "" && !emailField.value.includes("@")) {
+                emailField.classList.add("error");
+                emailValid = false;
+            }
+
+            if (!allFilled) {
+                document.getElementById("feedback").innerText = "Please fill out all fields.";
+            } else if (!emailValid) {
+                document.getElementById("feedback").innerText = "Please enter a valid email address (must contain '@').";
+            } else {
+                document.getElementById("feedback").style.color = "green";
+                document.getElementById("feedback").innerText = "Your message has been sent!";
+                form.reset();
+                return true; // Indicate that validation passed
+            }
+            return false; // Indicate that validation failed
+        }
+</script>
+
+<footer>
+        <p>&copy; 2025 My Website</p>
+    </footer>
+</body>
+
+</html>

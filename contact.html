@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Website</h1>
+        <nav>
+            <a href="LAB 1.html">Home</a>
+            <a href="summative 2.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="content">
+            <h2>Get in Touch</h2>
+            <form action="#" method="post" class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label>Name:</label>
+					<input type="text" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email:</label>
+					<input type="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Message:</label>
+					<textarea name="message" rows="5" required></textarea>
+                </div>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+        <p id="feedback" style="color:red;"></p>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 My Website</p>
+    </footer>
+
+    <script>
+        const scriptURL = "https://script.google.com/macros/s/AKfycbzk5IeiwC9qXK3WiPaETtMHV8oNVZBVAeGB-oV0KVZECqW3tZG_W6P_ur55RYCGV48Kng/exec";
+    const form = document.getElementById("contact-form");
+    const responseMsg = document.getElementById("response");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      fetch(scriptURL, {
+        method: "POST",
+        body: new URLSearchParams(formData)
+      })
+      .then(res => res.json())
+      .then(data => {
+        responseMsg.textContent = "Message sent successfully!";
+        form.reset();
+      })
+      .catch(error => {
+        responseMsg.textContent = "Error sending message.";
+        console.error("Error!", error.message);
+      });
+    });
+		function validateContactForm() {
+            const form = document.getElementById('contactForm');
+            const fields = form.querySelectorAll('[name="contactField"]');
+            const emailField = document.getElementById('email');
+            let allFilled = true;
+            let emailValid = true;
+
+            document.getElementById("feedback").innerText = "";
+            fields.forEach(field => field.classList.remove("error"));
+
+            // Check if all fields are filled
+            for (let i = 0; i < fields.length; i++) {
+                if (fields[i].value.trim() === "") {
+                    fields[i].classList.add("error");
+                    allFilled = false;
+                }
+            }
+
+            // Validate email format
+            if (emailField.value.trim() !== "" && !emailField.value.includes("@")) {
+                emailField.classList.add("error");
+                emailValid = false;
+            }
+
+            if (!allFilled) {
+                document.getElementById("feedback").innerText = "Please fill out all fields.";
+            } else if (!emailValid) {
+                document.getElementById("feedback").innerText = "Please enter a valid email address (must contain '@').";
+            } else {
+                document.getElementById("feedback").style.color = "green";
+                document.getElementById("feedback").innerText = "Your message has been sent!";
+                form.reset();
+                return true; // Indicate that validation passed
+            }
+            return false; // Indicate that validation failed
+        }
+
+        
+
+
+            }
+        });
+    </script>
+</body>
+</html>

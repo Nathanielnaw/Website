@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Periodic Table of Elements</title>
+<style>
+table{
+	border: 1px solid black;
+	border-collapse: collapse;
+	width:100%;
+	height:100px;
+}
+th, td {
+	padding: 5px;
+	text-align: center;  
+	border: 1px solid black;
+	border-collapse: collapse;
+	border: 1px solid black;
+	}
+</style>
+</head>
+<body style="background-color: plum">
+<table>
+ 
+<tr>
+		<th style="background-color:cyan">H<br><br>Hydrogen</th>
+		<th colspan="16"></th>
+		<th style="background-color:pink">He<br><br>Helium</th>
+</tr>
+<tr>
+	<th >Li<br><br>Lithium</th>
+	<th>Be<br><br>Beryllium</th>
+	<th colspan="10" rowspan="2"></th>
+	<th>B<br><br>Boron</th>
+	<th style="background-color:cyan">C<br><br>Carbon</th>
+	<th style="background-color:cyan">N<br><br>Nitrogen</th>
+	<th style="background-color:cyan">O<br><br>Oxygen</th>
+	<th style="background-color:cyan">F<br><br>Fluorine</th>
+	<th style="background-color:pink">Ne<br><br>Neon</th>
+</tr>
+<tr>
+	<th>Na<br><br>Sodium</th>
+	<th>Mg<br><br>Magnesium</th>
+	<th>Al<br><br>Aluminum</th>
+	<th>Si<br><br>Silicon</th>
+	<th style="background-color:cyan">P<br><br>Phosphorus</th>
+	<th style="background-color:cyan">S<br><br>Sulfur</th>
+	<th style="background-color:cyan">Cl<br><br>Chlorine</th>
+	<th style="background-color:pink">Ar<br><br>Argon</th>
+</tr>
+<tr>
+	<th>K<br><br>Potassium</th>
+	<th>Ca<br><br>Calcium</th>
+	<th>Sc<br><br>Scandium</th>
+	<th>Ti<br><br>Titanium</th>
+	<th>V<br><br>Vanadium</th>
+	<th>Cr<br><br>Chromium</th>
+	<th>Mn<br><br>Manganese</th>
+	<th>Fe<br><br>Iron</th>
+	<th>Co<br><br>Cobalt</th>
+	<th>Ni<br><br>Nickel</th>
+	<th>Cu<br><br>Copper</th>
+	<th>Zn<br><br>Zinc</th>
+	<th>Ga<br><br>Gallium</th>
+	<th>Ge<br><br>Germanium</th>
+	<th>As<br><br>Arsenic</th>
+	<th style="background-color:cyan">Se<br><br>Serenium</th>
+	<th style="background-color:cyan">Br<br><br>Bromine</th>
+	<th style="background-color:pink">Kr<br><br>Krypton</th>
+</tr>
+<tr>
+	<th>Rb<br><br>Rubium</th>
+	<th>Sr<br><br>Strontium</th>
+	<th>Y<br><br>Yttrium</th>
+	<th>Zr<br><br>Zirconium</th>
+	<th>Nb<br><br>Niobium</th>
+	<th>Mo<br><br>Molybenum</th>
+	<th>Tc<br><br>Technetium</th>
+	<th>Ru<br><br>Ruthenium</th>
+	<th>Rh<br><br>Rhodium</th>
+	<th>Pd<br><br>Palladium</th>
+	<th>Ag<br><br>Silver</th>
+	<th>Cd<br><br>Cadmium</th>
+	<th>In<br><br>indium</th>
+	<th>Sn<br><br>Tin</th>
+	<th>Sb<br><br>Antimony</th>
+	<th>Te<br><br>Tellurium</th>
+	<th style="background-color:cyan">I<br><br>Iodine</th>
+	<th style="background-color:pink">Xe<br><br>Xenon</th>
+</tr>
+<tr>
+	<th>Cs<br><br>Caesium</th>
+	<th>Ba<br><br>Barium</th>
+	<th rowspan="2"></th>
+	<th>Hf<br><br>Hafnium</th>
+	<th>Ta<br><br>Tantalum</th>
+	<th>W<br><br>Tungsten</th>
+	<th>Re<br><br>Rhenium</th>
+	<th>Os<br><br>Osmium</th>
+	<th>Ir<br><br>Iridium</th>
+	<th>Pt<br><br>Platinum</th>
+	<th>Au<br><br>Gold</th>
+	<th>Hg<br><br>Mercury</th>
+	<th>Tl<br><br>Thallium</th>
+	<th>Pb<br><br>Lead</th>
+	<th>Bi<br><br>Bismuth</th>
+	<th>Po<br><br>Polonium</th>
+	<th>At<br><br>Astatine</th>
+	<th style="background-color:pink">Rn<br><br>Radon</th>
+</tr>
+<tr>
+	<th>Fr<br><br>Francium</th>
+	<th>Ra<br><br>Radium</th>
+	<th>Rf<br><br>Rutherford</th>
+	<th>Db<br><br>Dubnium</th>
+	<th>Sg<br><br>Seaborgium</th>
+	<th>Bh<br><br>Bohrium</th>
+	<th>Hs<br><br>Hassium</th>
+	<th>Mt<br><br>Meitnerium</th>
+	<th>Ds<br><br>Darmstadium</th>
+	<th>Rg<br><br>Roentgerium</th>
+	<th>Cn<br><br>Copernicium</th>
+	<th>Nh<br><br>Nihonium</th>
+	<th>Fl<br><br>Flevorism</th>
+	<th>Mc<br><br>Moscovium</th>
+	<th>Lv<br><br>Livermorium</th>
+	<th>Ts<br><br>Tennessine</th>
+	<th>Og<br><br>Ognanesson</th>
+</tr>
+<tr>
+	<th colspan="18" rowspan="1"></th>
+</tr>
+<tr>
+	<th colspan="2" rowspan="2"></th>
+	<th>La<br><br>Lathinum</th>
+	<th>Ce<br><br>Cerium</th>
+	<th>Pr<br><br>Praseodymium</th>
+	<th>Nd<br><br>Neodymium</th>
+	<th>Pm<br><br>Promethium</th>
+	<th>Sm<br><br>Samarium</th>
+	<th>Eu<br><br>Europium</th>
+	<th>Gd<br><br>Gadolinium</th>
+	<th>Tb<br><br>Terbium</th>
+	<th>Dy<br><br>Dysprosium</th>
+	<th>Ho<br><br>Holmium</th>
+	<th>Er<br><br>Erbium</th>
+	<th>Tm<br><br>Thulium</th>
+	<th>Yb<br><br>Ytterbium</th>
+	<th>Lu<br><br>Lutetium</th>
+</tr>
+<tr>
+	<th>Ac<br><br>Actinium</th>
+	<th>Th<br><br>Thorium</th>
+	<th>Pa<br><br>Procatinium</th>
+	<th>U<br><br>Uranium</th>
+	<th>Np<br><br>Neptunium</th>
+	<th>Pu<br><br>Plutonium</th>
+	<th>Am<br><br>Americium</th>
+	<th>Cm<br><br>Curium</th>
+	<th>Bk<br><br>Berkelium</th>
+	<th>Cf<br><br>Calfornium</th>
+	<th>Es<br><br>Einsteinium</th>
+	<th>Fm<br><br>Fermium</th>
+	<th>Md<br><br>Mendelevium</th>
+	<th>No<br><br>Nobelium</th>
+	<th>Lr<br><br>Lawrencium</th>
+</tr>
+</table>
+ 
+</body>
+</html>

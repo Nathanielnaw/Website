@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>JavaScript Pop-up Boxes</title>
+</head>
+<body>
+ <h2>Click the button to interact!</h2>
+ <button onclick="popupDemo()">Try Pop-ups</button>
+ 
+ <script>
+   function popupDemo() {
+     // Alert box
+     alert("Hello! This is an alert box.");
+ 
+     // Prompt box
+     const name = prompt("What is your name?");
+     if (name) {
+       // Confirm box
+       const confirmGreet = confirm("Do you want to be greeted?");
+       if (confirmGreet) {
+         alert("Nice to meet you, " + name + "!");
+       } else {
+         alert("Alright, maybe next time.");
+       }
+     } else {
+       alert("You didn't enter a name.");
+     }
+   }
+ </script>
+</body>
+</html>

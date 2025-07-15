@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Personal Website</title>
+    <link rel="stylesheet" href="Lab 1.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Website</h1>
+        <nav>
+            <a href="LAB 1.html">Home</a>
+            <a href="summative 2.html">About</a>
+            <a href="contact_1.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Survey Form</h2>
+        <p style="color: white;">Open the browser prompt to fill multiple times.</p>
+        <button onclick="startSurvey()">Start Survey</button>
+
+        <script>
+            function startSurvey() {
+                let continueFilling = true;
+
+                while (continueFilling) {
+                    let name = prompt("What is your name?");
+                    if (!name) break;
+
+                    let age = prompt("How old are you?");
+                    if (!age) break;
+
+                    let email = prompt("What is your email?");
+                    if (!email) break;
+
+                    alert(`Thank you, ${name}! Your data was submitted.`);
+
+                    let answer = prompt("Would you like to fill out another form? (yes/no)").toLowerCase();
+
+                    if (answer !== "yes") {
+                        continueFilling = false;
+                        alert("Thank you for participating!");
+                    }
+                }
+            }
+        </script>
+
+        <div class="container">
+            <div class="menu">
+                <section>
+                    <h2 style="color:black;">My Projects</h2>
+                    <ul>
+                        <a href="lab 2.html"><li>SDG 10</li></a>
+                        <a href="Lab 3 elements.html"><li>Periodic table</li></a>
+                        <a href="lab 4.html"><li>Form</li></a>
+                        <a href="lab 5.html"><li>Responsiveness</li></a>
+                        <a href="summative 2.html"><li>Resume</li></a>
+                    </ul>
+                </section>
+            </div>
+            <div class="content">
+                <section>
+                    <h2>About Me</h2>
+                    <p>I'm a student in FEU and a dedicated IT professional with a passion for problem-solving,
+                        system optimization, and emerging technologies. With experience in network security,
+                        cloud computing, and software development, I thrive in fast-paced environments
+                        that require innovative solutions.
+                    </p>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 My Website</p>
+    </footer>
+ 
+</body>
+</html>
